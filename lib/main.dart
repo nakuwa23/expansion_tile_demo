@@ -91,6 +91,8 @@ class FaqScreen extends StatelessWidget {
                     const _SectionLabel('Customized ExpansionTile'),
 
                     ExpansionTile(
+                      // Property 1: open on load
+                      initiallyExpanded: true,
                       // Supporting setup: rounded card look
                       shape: _cardShape,
                       collapsedShape: _cardShape,
