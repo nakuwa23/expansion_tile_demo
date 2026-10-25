@@ -18,8 +18,9 @@ class FaqScreen extends StatelessWidget {
   const FaqScreen({super.key});
 
   // Color palette
-  static const _accent = Color(0xFFD84315); // header, title, icon
+  static const _accent = Color.fromARGB(255, 216, 83, 42); // header, title, icon
   static const _outline = Color(0xFFFFCC80); // customized card border
+  static const _tint = Color(0xFFFFF3E0); // expanded background
   static const _neutralBorder = Color(0xFFE3D9D1); // default card border
 
   static final _cardShape = RoundedRectangleBorder(
@@ -93,6 +94,8 @@ class FaqScreen extends StatelessWidget {
                     ExpansionTile(
                       // Property 1: open on load
                       initiallyExpanded: true,
+                      // Property 2: tinted background when expanded
+                      backgroundColor: _tint,
                       // Supporting setup: rounded card look
                       shape: _cardShape,
                       collapsedShape: _cardShape,
