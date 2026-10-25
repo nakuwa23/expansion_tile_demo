@@ -96,6 +96,9 @@ class FaqScreen extends StatelessWidget {
                       initiallyExpanded: true,
                       // Property 2: tinted background when expanded
                       backgroundColor: _tint,
+                      // Property 3: custom trailing icon
+                      trailing:
+                          const Icon(Icons.help_outline, color: _accent),
                       // Supporting setup: rounded card look
                       shape: _cardShape,
                       collapsedShape: _cardShape,
