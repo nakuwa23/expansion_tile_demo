@@ -19,6 +19,7 @@ class FaqScreen extends StatelessWidget {
 
   // Color palette
   static const _accent = Color(0xFFD84315); // header, title, icon
+  static const _neutralBorder = Color(0xFFE3D9D1); // default card border
 
   @override
   Widget build(BuildContext context) {
@@ -59,11 +60,51 @@ class FaqScreen extends StatelessWidget {
                 ),
                 child: ListView(
                   padding: const EdgeInsets.fromLTRB(20, 28, 20, 20),
-                  children: const [],
+                  children: [
+                    const _SectionLabel('Default ExpansionTile'),
+
+                    // Baseline: no ExpansionTile properties set.
+                    // The Container only frames it so it looks tidy.
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: _neutralBorder),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: const ExpansionTile(
+                        title: Text('How do I reset my password?'),
+                        children: [
+                          ListTile(
+                            title: Text(
+                                'Go to Settings > Account > Reset password.'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SectionLabel extends StatelessWidget {
+  const _SectionLabel(this.text);
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 4, bottom: 8),
+      child: Text(
+        text,
+        style: const TextStyle(
+          fontSize: 13,
+          fontWeight: FontWeight.w600,
+          color: Color(0xFF7A6A5F),
         ),
       ),
     );
