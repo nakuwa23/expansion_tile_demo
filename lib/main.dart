@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-// Widget docs: https://api.flutter.dev/flutter/material/ExpansionTile-class.html
-
 void main() => runApp(const FaqApp());
 
 class FaqApp extends StatelessWidget {
