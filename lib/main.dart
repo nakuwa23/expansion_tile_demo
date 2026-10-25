@@ -19,7 +19,13 @@ class FaqScreen extends StatelessWidget {
 
   // Color palette
   static const _accent = Color(0xFFD84315); // header, title, icon
+  static const _outline = Color(0xFFFFCC80); // customized card border
   static const _neutralBorder = Color(0xFFE3D9D1); // default card border
+
+  static final _cardShape = RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(16),
+    side: const BorderSide(color: _outline),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +85,29 @@ class FaqScreen extends StatelessWidget {
                           ),
                         ],
                       ),
+                    ),
+
+                    const SizedBox(height: 24),
+                    const _SectionLabel('Customized ExpansionTile'),
+
+                    ExpansionTile(
+                      // Supporting setup: rounded card look
+                      shape: _cardShape,
+                      collapsedShape: _cardShape,
+                      clipBehavior: Clip.antiAlias,
+                      title: const Text(
+                        'How do I contact support?',
+                        style: TextStyle(
+                          color: _accent,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      children: const [
+                        ListTile(
+                          title: Text(
+                              'Email support@gmail.com or use in-app chat.'),
+                        ),
+                      ],
                     ),
                   ],
                 ),
